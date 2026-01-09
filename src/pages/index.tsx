@@ -251,7 +251,7 @@ export default function PizzaLandingPage() {
         style={{ backgroundColor: "#B42D19" }}
       >
         {/* ===== NAVBAR ===== */}
-        <nav className="absolute top-0 left-0 right-0 z-50 px-6 lg:px-16 py-5">
+        <nav className="absolute top-0 left-0 right-0 z-50 px-1 lg:px-16 py-5">
           <div className="max-w-[1400px] mx-auto flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="flex items-center relative z-50">
@@ -695,7 +695,7 @@ export default function PizzaLandingPage() {
             <div className="flex flex-col items-center cursor-pointer group">
               <div className="w-[120px] md:w-[140px] h-[100px] md:h-[110px] bg-white rounded-2xl shadow-sm flex items-center justify-center transition-all duration-300 group-hover:bg-[#8B1E1E] group-hover:shadow-xl group-hover:scale-110 group-hover:-translate-y-2 p-3">
                 <img
-                  src="/pizza-images/traditional-pizza.png"
+                  src="/pizza-images/gourmet.png"
                   alt="Traditional Pizza"
                   className="w-full h-full object-contain transition-all duration-300"
                 />
