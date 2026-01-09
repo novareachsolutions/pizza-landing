@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { Menu, X } from 'lucide-react';
+import React, { useState, useEffect, useRef } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { Menu, X } from "lucide-react";
 
 // Custom hook for scroll-based animations
 const useScrollAnimation = (threshold = 0.1) => {
@@ -15,7 +15,7 @@ const useScrollAnimation = (threshold = 0.1) => {
           setIsVisible(true);
         }
       },
-      { threshold, rootMargin: '0px 0px -50px 0px' }
+      { threshold, rootMargin: "0px 0px -50px 0px" }
     );
 
     const currentRef = ref.current;
@@ -36,33 +36,41 @@ const useScrollAnimation = (threshold = 0.1) => {
 // Animated component wrapper
 const AnimatedSection = ({
   children,
-  className = '',
-  animation = 'fadeUp',
+  className = "",
+  animation = "fadeUp",
   delay = 0,
   threshold = 0.1,
 }: {
   children: React.ReactNode;
   className?: string;
-  animation?: 'fadeUp' | 'fadeIn' | 'fadeLeft' | 'fadeRight' | 'scale' | 'slideUp';
+  animation?:
+    | "fadeUp"
+    | "fadeIn"
+    | "fadeLeft"
+    | "fadeRight"
+    | "scale"
+    | "slideUp";
   delay?: number;
   threshold?: number;
 }) => {
   const { ref, isVisible } = useScrollAnimation(threshold);
 
   const animations = {
-    fadeUp: 'translate-y-12 opacity-0',
-    fadeIn: 'opacity-0',
-    fadeLeft: 'translate-x-12 opacity-0',
-    fadeRight: '-translate-x-12 opacity-0',
-    scale: 'scale-95 opacity-0',
-    slideUp: 'translate-y-8 opacity-0',
+    fadeUp: "translate-y-12 opacity-0",
+    fadeIn: "opacity-0",
+    fadeLeft: "translate-x-12 opacity-0",
+    fadeRight: "-translate-x-12 opacity-0",
+    scale: "scale-95 opacity-0",
+    slideUp: "translate-y-8 opacity-0",
   };
 
   return (
     <div
       ref={ref}
       className={`transition-all duration-700 ease-out ${className} ${
-        isVisible ? 'translate-y-0 translate-x-0 opacity-100 scale-100' : animations[animation]
+        isVisible
+          ? "translate-y-0 translate-x-0 opacity-100 scale-100"
+          : animations[animation]
       }`}
       style={{ transitionDelay: `${delay}ms` }}
     >
@@ -213,8 +221,8 @@ export default function PizzaLandingPage() {
     const originalBodyOverflow = body.style.overflow;
 
     // Disable scrolling on html and body
-    html.style.overflow = 'hidden';
-    body.style.overflow = 'hidden';
+    html.style.overflow = "hidden";
+    body.style.overflow = "hidden";
 
     return () => {
       // Restore original styles on unmount
@@ -226,7 +234,7 @@ export default function PizzaLandingPage() {
   // Auto-play carousel
   useEffect(() => {
     const autoPlayInterval = setInterval(() => {
-      setCurrentSlide(prev => (prev === totalSlides - 1 ? 0 : prev + 1));
+      setCurrentSlide((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
     }, 8000); // Change slide every 8 seconds
 
     return () => clearInterval(autoPlayInterval);
@@ -238,7 +246,10 @@ export default function PizzaLandingPage() {
       <style dangerouslySetInnerHTML={{ __html: floatingStyles }} />
 
       {/* ========== HERO CAROUSEL SECTION ========== */}
-      <section className="relative h-screen overflow-hidden" style={{ backgroundColor: '#B42D19' }}>
+      <section
+        className="relative h-screen overflow-hidden"
+        style={{ backgroundColor: "#B42D19" }}
+      >
         {/* ===== NAVBAR ===== */}
         <nav className="absolute top-0 left-0 right-0 z-50 px-6 lg:px-16 py-5">
           <div className="max-w-[1400px] mx-auto flex items-center justify-between">
@@ -263,7 +274,7 @@ export default function PizzaLandingPage() {
                 Home
               </Link>
               <Link
-                href="/menu"
+                href="https://famous-pizza.customer.novareachsolutions.com/menu"
                 className="text-white/70 hover:text-white text-[15px] font-medium transition-colors"
                 style={{ fontFamily: "'Weissenhof Grotesk', sans-serif" }}
               >
@@ -273,9 +284,12 @@ export default function PizzaLandingPage() {
 
             {/* Order Button */}
             <Link
-              href="/menu"
+              href="https://famous-pizza.customer.novareachsolutions.com/menu"
               className="hidden md:inline-block bg-[#FFB800] hover:bg-[#E5A600] text-[#1a1a1a] px-6 py-2.5 rounded-full text-[15px] font-medium transition-colors"
-              style={{ fontFamily: "'Troyline Sans Stamp', sans-serif", letterSpacing: '0.05em' }}
+              style={{
+                fontFamily: "'Troyline Sans Stamp', sans-serif",
+                letterSpacing: "0.05em",
+              }}
             >
               ORDER
             </Link>
@@ -301,7 +315,7 @@ export default function PizzaLandingPage() {
                   Home
                 </Link>
                 <Link
-                  href="/menu"
+                  href="https://famous-pizza.customer.novareachsolutions.com/menu"
                   className="text-white/80 font-medium"
                   onClick={() => setMobileMenuOpen(false)}
                 >
@@ -349,10 +363,12 @@ export default function PizzaLandingPage() {
                 {/* Bottom Right - Halal Badge */}
                 <div
                   className={`absolute bottom-4 right-4 md:bottom-8 md:right-8 lg:bottom-12 lg:right-12 transition-all duration-1000 ${
-                    currentSlide === 0 ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
+                    currentSlide === 0
+                      ? "opacity-100 scale-100"
+                      : "opacity-0 scale-0"
                   }`}
                   style={{
-                    transitionDelay: currentSlide === 0 ? '600ms' : '0ms',
+                    transitionDelay: currentSlide === 0 ? "600ms" : "0ms",
                   }}
                 >
                   <div className="relative w-14 h-14 md:w-20 md:h-20 lg:w-24 lg:h-24">
@@ -413,10 +429,12 @@ export default function PizzaLandingPage() {
                 {/* Bottom Right - Halal Badge */}
                 <div
                   className={`absolute bottom-4 right-4 md:bottom-8 md:right-8 lg:bottom-12 lg:right-12 z-30 transition-all duration-1000 ${
-                    currentSlide === 1 ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
+                    currentSlide === 1
+                      ? "opacity-100 scale-100"
+                      : "opacity-0 scale-0"
                   }`}
                   style={{
-                    transitionDelay: currentSlide === 1 ? '600ms' : '0ms',
+                    transitionDelay: currentSlide === 1 ? "600ms" : "0ms",
                   }}
                 >
                   <div className="relative w-14 h-14 md:w-20 md:h-20 lg:w-24 lg:h-24">
@@ -553,10 +571,12 @@ export default function PizzaLandingPage() {
               {/* Bottom Right - Halal Badge */}
               <div
                 className={`absolute bottom-4 right-4 md:bottom-8 md:right-8 lg:bottom-12 lg:right-12 z-30 transition-all duration-1000 ${
-                  currentSlide === 2 ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
+                  currentSlide === 2
+                    ? "opacity-100 scale-100"
+                    : "opacity-0 scale-0"
                 }`}
                 style={{
-                  transitionDelay: currentSlide === 2 ? '600ms' : '0ms',
+                  transitionDelay: currentSlide === 2 ? "600ms" : "0ms",
                 }}
               >
                 <div className="relative w-14 h-14 md:w-20 md:h-20 lg:w-24 lg:h-24">
@@ -573,7 +593,11 @@ export default function PizzaLandingPage() {
 
           {/* Navigation Arrows */}
           <button
-            onClick={() => setCurrentSlide(prev => (prev === 0 ? totalSlides - 1 : prev - 1))}
+            onClick={() =>
+              setCurrentSlide((prev) =>
+                prev === 0 ? totalSlides - 1 : prev - 1
+              )
+            }
             className="absolute left-4 top-1/2 -translate-y-1/2 z-40 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full transition-all"
             aria-label="Previous slide"
           >
@@ -585,12 +609,20 @@ export default function PizzaLandingPage() {
               stroke="currentColor"
               className="w-6 h-6"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M15.75 19.5L8.25 12l7.5-7.5"
+              />
             </svg>
           </button>
 
           <button
-            onClick={() => setCurrentSlide(prev => (prev === totalSlides - 1 ? 0 : prev + 1))}
+            onClick={() =>
+              setCurrentSlide((prev) =>
+                prev === totalSlides - 1 ? 0 : prev + 1
+              )
+            }
             className="absolute right-4 top-1/2 -translate-y-1/2 z-40 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full transition-all"
             aria-label="Next slide"
           >
@@ -602,7 +634,11 @@ export default function PizzaLandingPage() {
               stroke="currentColor"
               className="w-6 h-6"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M8.25 4.5l7.5 7.5-7.5 7.5"
+              />
             </svg>
           </button>
 
@@ -613,7 +649,9 @@ export default function PizzaLandingPage() {
                 key={index}
                 onClick={() => setCurrentSlide(index)}
                 className={`w-3 h-3 rounded-full transition-all ${
-                  currentSlide === index ? 'bg-white w-8' : 'bg-white/50 hover:bg-white/70'
+                  currentSlide === index
+                    ? "bg-white w-8"
+                    : "bg-white/50 hover:bg-white/70"
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
@@ -761,7 +799,11 @@ export default function PizzaLandingPage() {
             {/* Top Row - 2 Images (Famous Light Box double size on left, 1.webp on right) */}
             <div className="flex flex-col md:flex-row gap-5">
               {/* Famous Light Box - Double size (takes 2 columns worth) */}
-              <AnimatedSection animation="fadeLeft" delay={100} className="w-full md:w-[66%]">
+              <AnimatedSection
+                animation="fadeLeft"
+                delay={100}
+                className="w-full md:w-[66%]"
+              >
                 <div className="relative overflow-hidden rounded-2xl h-[300px] md:h-[400px] transition-all duration-300 hover:shadow-2xl hover:scale-[1.01] cursor-pointer">
                   <Image
                     src="/pizza-images/famous light box.jpg"
@@ -775,7 +817,11 @@ export default function PizzaLandingPage() {
               </AnimatedSection>
 
               {/* Image 1 */}
-              <AnimatedSection animation="fadeRight" delay={200} className="w-full md:w-[34%]">
+              <AnimatedSection
+                animation="fadeRight"
+                delay={200}
+                className="w-full md:w-[34%]"
+              >
                 <div className="relative overflow-hidden rounded-2xl aspect-square md:aspect-auto md:h-[400px] transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] cursor-pointer">
                   <Image
                     src="/pizza-images/1.webp"
@@ -919,13 +965,15 @@ export default function PizzaLandingPage() {
                     className="text-gray-500 group-hover:text-white/80 text-[13px] md:text-[14px] mb-3 max-w-[200px] transition-colors duration-300"
                     style={{ fontFamily: "'Weissenhof Grotesk', sans-serif" }}
                   >
-                    Peri Peri Marinated Chicken, Mushroom, Capsicum, Onion, Topped with Peri Peri
-                    Mayo
+                    Peri Peri Marinated Chicken, Mushroom, Capsicum, Onion,
+                    Topped with Peri Peri Mayo
                   </p>
                   <p className="mb-4">
                     <span
                       className="text-[#C23A22] group-hover:text-[#FFB800] text-[18px] md:text-[20px] transition-colors duration-300"
-                      style={{ fontFamily: "'Troyline Sans Stamp', sans-serif" }}
+                      style={{
+                        fontFamily: "'Troyline Sans Stamp', sans-serif",
+                      }}
                     >
                       $20.99
                     </span>
@@ -933,9 +981,12 @@ export default function PizzaLandingPage() {
 
                   {/* View Button */}
                   <Link
-                    href="/menu"
+                    href="https://famous-pizza.customer.novareachsolutions.com/menu"
                     className="inline-flex items-center gap-2 bg-transparent group-hover:bg-[#E5A030] border-2 border-[#E5A030] text-[#1a1a1a] group-hover:text-white px-6 py-2.5 rounded-full text-[13px] tracking-wider transition-all duration-300 hover:scale-105"
-                    style={{ fontFamily: "'Weissenhof Grotesk', sans-serif", fontWeight: 600 }}
+                    style={{
+                      fontFamily: "'Weissenhof Grotesk', sans-serif",
+                      fontWeight: 600,
+                    }}
                   >
                     <svg
                       width="16"
@@ -1010,22 +1061,27 @@ export default function PizzaLandingPage() {
                     className="text-gray-500 group-hover:text-white/80 text-[13px] md:text-[14px] mb-3 max-w-[200px] transition-colors duration-300"
                     style={{ fontFamily: "'Weissenhof Grotesk', sans-serif" }}
                   >
-                    Marinated Chicken 65, Capsicum, Mushroom, Red Onion, Jalapenos, Topped with
-                    Special Garlic Sauce
+                    Marinated Chicken 65, Capsicum, Mushroom, Red Onion,
+                    Jalapenos, Topped with Special Garlic Sauce
                   </p>
                   <p className="mb-4">
                     <span
                       className="text-[#C23A22] group-hover:text-[#FFB800] text-[18px] md:text-[20px] transition-colors duration-300"
-                      style={{ fontFamily: "'Troyline Sans Stamp', sans-serif" }}
+                      style={{
+                        fontFamily: "'Troyline Sans Stamp', sans-serif",
+                      }}
                     >
                       $20.99
                     </span>
                   </p>
 
                   <Link
-                    href="/menu"
+                    href="https://famous-pizza.customer.novareachsolutions.com/menu"
                     className="inline-flex items-center gap-2 bg-transparent group-hover:bg-[#E5A030] border-2 border-[#E5A030] text-[#1a1a1a] group-hover:text-white px-6 py-2.5 rounded-full text-[13px] tracking-wider transition-all duration-300 hover:scale-105"
-                    style={{ fontFamily: "'Weissenhof Grotesk', sans-serif", fontWeight: 600 }}
+                    style={{
+                      fontFamily: "'Weissenhof Grotesk', sans-serif",
+                      fontWeight: 600,
+                    }}
                   >
                     <svg
                       width="16"
@@ -1099,13 +1155,15 @@ export default function PizzaLandingPage() {
                     className="text-gray-500 group-hover:text-white/80 text-[13px] md:text-[14px] mb-3 max-w-[200px] transition-colors duration-300"
                     style={{ fontFamily: "'Weissenhof Grotesk', sans-serif" }}
                   >
-                    Shredded Tandoori Chicken, Red Onion, Capsicum, Baby Spinach, Topped With Yogurt
-                    Sauce
+                    Shredded Tandoori Chicken, Red Onion, Capsicum, Baby
+                    Spinach, Topped With Yogurt Sauce
                   </p>
                   <p className="mb-4">
                     <span
                       className="text-[#C23A22] group-hover:text-[#FFB800] text-[18px] md:text-[20px] transition-colors duration-300"
-                      style={{ fontFamily: "'Troyline Sans Stamp', sans-serif" }}
+                      style={{
+                        fontFamily: "'Troyline Sans Stamp', sans-serif",
+                      }}
                     >
                       $12.99
                     </span>
@@ -1114,16 +1172,21 @@ export default function PizzaLandingPage() {
                     </span>
                     <span
                       className="text-[#C23A22] group-hover:text-[#FFB800] text-[18px] md:text-[20px] transition-colors duration-300"
-                      style={{ fontFamily: "'Troyline Sans Stamp', sans-serif" }}
+                      style={{
+                        fontFamily: "'Troyline Sans Stamp', sans-serif",
+                      }}
                     >
                       $19.99
                     </span>
                   </p>
 
                   <Link
-                    href="/menu"
+                    href="https://famous-pizza.customer.novareachsolutions.com/menu"
                     className="inline-flex items-center gap-2 bg-transparent group-hover:bg-[#E5A030] border-2 border-[#E5A030] text-[#1a1a1a] group-hover:text-white px-6 py-2.5 rounded-full text-[13px] tracking-wider transition-all duration-300 hover:scale-105"
-                    style={{ fontFamily: "'Weissenhof Grotesk', sans-serif", fontWeight: 600 }}
+                    style={{
+                      fontFamily: "'Weissenhof Grotesk', sans-serif",
+                      fontWeight: 600,
+                    }}
                   >
                     <svg
                       width="16"
@@ -1197,12 +1260,15 @@ export default function PizzaLandingPage() {
                     className="text-gray-500 group-hover:text-white/80 text-[13px] md:text-[14px] mb-3 max-w-[200px] transition-colors duration-300"
                     style={{ fontFamily: "'Weissenhof Grotesk', sans-serif" }}
                   >
-                    Olives, Pineapple, Capsicum, Onions, Herbs, Jalapenos with Pesto & Mayo Sauce
+                    Olives, Pineapple, Capsicum, Onions, Herbs, Jalapenos with
+                    Pesto & Mayo Sauce
                   </p>
                   <p className="mb-4">
                     <span
                       className="text-[#C23A22] group-hover:text-[#FFB800] text-[18px] md:text-[20px] transition-colors duration-300"
-                      style={{ fontFamily: "'Troyline Sans Stamp', sans-serif" }}
+                      style={{
+                        fontFamily: "'Troyline Sans Stamp', sans-serif",
+                      }}
                     >
                       $11.99
                     </span>
@@ -1211,16 +1277,21 @@ export default function PizzaLandingPage() {
                     </span>
                     <span
                       className="text-[#C23A22] group-hover:text-[#FFB800] text-[18px] md:text-[20px] transition-colors duration-300"
-                      style={{ fontFamily: "'Troyline Sans Stamp', sans-serif" }}
+                      style={{
+                        fontFamily: "'Troyline Sans Stamp', sans-serif",
+                      }}
                     >
                       $17.99
                     </span>
                   </p>
 
                   <Link
-                    href="/menu"
+                    href="https://famous-pizza.customer.novareachsolutions.com/menu"
                     className="inline-flex items-center gap-2 bg-transparent group-hover:bg-[#E5A030] border-2 border-[#E5A030] text-[#1a1a1a] group-hover:text-white px-6 py-2.5 rounded-full text-[13px] tracking-wider transition-all duration-300 hover:scale-105"
-                    style={{ fontFamily: "'Weissenhof Grotesk', sans-serif", fontWeight: 600 }}
+                    style={{
+                      fontFamily: "'Weissenhof Grotesk', sans-serif",
+                      fontWeight: 600,
+                    }}
                   >
                     <svg
                       width="16"
@@ -1244,7 +1315,7 @@ export default function PizzaLandingPage() {
           <AnimatedSection animation="fadeUp" delay={400}>
             <div className="text-center mt-12">
               <Link
-                href="/menu"
+                href="https://famous-pizza.customer.novareachsolutions.com/menu"
                 className="inline-block bg-[#1a1a1a] hover:bg-[#333] hover:scale-105 text-white px-10 py-4 rounded-full text-[15px] tracking-wider transition-all duration-300"
                 style={{ fontFamily: "'Troyline Sans Stamp', sans-serif" }}
               >
@@ -1259,7 +1330,11 @@ export default function PizzaLandingPage() {
       <section className="relative bg-[#B42D19] min-h-[700px] lg:min-h-[850px] overflow-hidden">
         {/* Top Brush Stroke Edge */}
         <div className="absolute top-0 left-0 right-0 z-20">
-          <svg className="w-full h-16" viewBox="0 0 1440 60" preserveAspectRatio="none">
+          <svg
+            className="w-full h-16"
+            viewBox="0 0 1440 60"
+            preserveAspectRatio="none"
+          >
             <path
               d="M0,0 C150,40 350,20 500,35 C650,50 750,15 900,25 C1050,35 1200,45 1440,20 L1440,0 L0,0 Z"
               fill="#FFFFFF"
@@ -1296,7 +1371,7 @@ export default function PizzaLandingPage() {
               className="text-white text-[38px] sm:text-[50px] md:text-[65px] lg:text-[82px] xl:text-[95px] leading-[1.05] tracking-tight mb-6"
               style={{
                 fontFamily: "'Troyline Sans Stamp', sans-serif",
-                textShadow: '4px 4px 0px rgba(0,0,0,0.3)',
+                textShadow: "4px 4px 0px rgba(0,0,0,0.3)",
               }}
             >
               Free Delivery within
@@ -1308,16 +1383,20 @@ export default function PizzaLandingPage() {
               className="text-white text-[18px] md:text-[20px] lg:text-[22px] leading-relaxed mb-10 max-w-[500px]"
               style={{ fontFamily: "'Weissenhof Grotesk', sans-serif" }}
             >
-              Craving something delicious? We&apos;ve got you covered with free home delivery within 2 km
-              — bringing you our full menu of freshly made pizzas, burgers, pasta, treats & drinks
+              Craving something delicious? We&apos;ve got you covered with free
+              home delivery within 2 km — bringing you our full menu of freshly
+              made pizzas, burgers, pasta, treats & drinks
             </p>
 
             {/* VIEW ALL ITEMS button with arrow */}
             <div className="flex items-center gap-5">
               <Link
-                href="/menu"
+                href="https://famous-pizza.customer.novareachsolutions.com/menu"
                 className="inline-block bg-[#FFB800] hover:bg-[#E5A600] hover:scale-105 text-[#1a1a1a] px-10 py-4 rounded-full text-[17px] md:text-[19px] font-medium transition-all duration-300 shadow-lg hover:shadow-xl"
-                style={{ fontFamily: "'Troyline Sans Stamp', sans-serif", letterSpacing: '0.05em' }}
+                style={{
+                  fontFamily: "'Troyline Sans Stamp', sans-serif",
+                  letterSpacing: "0.05em",
+                }}
               >
                 VIEW ALL ITEMS
               </Link>
@@ -1353,7 +1432,11 @@ export default function PizzaLandingPage() {
 
         {/* Bottom Brush Stroke Edge */}
         <div className="absolute bottom-0 left-0 right-0 z-30">
-          <svg className="w-full h-20" viewBox="0 0 1440 70" preserveAspectRatio="none">
+          <svg
+            className="w-full h-20"
+            viewBox="0 0 1440 70"
+            preserveAspectRatio="none"
+          >
             <path
               d="M0,70 C200,35 400,55 600,40 C800,25 1000,50 1200,35 C1350,25 1400,45 1440,40 L1440,70 L0,70 Z"
               fill="#FAF5F0"
@@ -1366,13 +1449,16 @@ export default function PizzaLandingPage() {
       <section className="bg-[#FAF5F0] py-20 px-6 lg:px-16 relative overflow-hidden">
         <div className="max-w-[1300px] mx-auto">
           {/* Section Title */}
-          <AnimatedSection animation="fadeUp" className="text-center mb-12 md:mb-16">
+          <AnimatedSection
+            animation="fadeUp"
+            className="text-center mb-12 md:mb-16"
+          >
             <h2 className="text-[40px] md:text-[56px] lg:text-[72px] tracking-wide">
               <span
                 className="text-[#8B4513]"
                 style={{ fontFamily: "'Troyline Sans Stamp', sans-serif" }}
               >
-                USERS{' '}
+                USERS{" "}
               </span>
               <span
                 className="text-[#8B1E1E]"
@@ -1416,8 +1502,8 @@ export default function PizzaLandingPage() {
                   className="text-gray-600 text-[15px] leading-relaxed mb-4"
                   style={{ fontFamily: "'Weissenhof Grotesk', sans-serif" }}
                 >
-                  &laquo; Amazing pizza! The crust was perfectly crispy and the toppings were fresh.
-                  Best pizza delivery in town! &raquo;
+                  &laquo; Amazing pizza! The crust was perfectly crispy and the
+                  toppings were fresh. Best pizza delivery in town! &raquo;
                 </p>
                 <div className="flex items-center gap-2 text-[14px]">
                   <span className="text-[#C23A22]">&#9873;</span>
@@ -1447,8 +1533,8 @@ export default function PizzaLandingPage() {
                   className="text-gray-600 text-[15px] leading-relaxed mb-4"
                   style={{ fontFamily: "'Weissenhof Grotesk', sans-serif" }}
                 >
-                  &laquo; Fast delivery and the food arrived hot. The student deal is unbeatable!
-                  Will definitely order again. &raquo;
+                  &laquo; Fast delivery and the food arrived hot. The student
+                  deal is unbeatable! Will definitely order again. &raquo;
                 </p>
                 <div className="flex items-center gap-2 text-[14px]">
                   <span className="text-[#C23A22]">&#9873;</span>
@@ -1478,8 +1564,8 @@ export default function PizzaLandingPage() {
                   className="text-white/80 text-[15px] leading-relaxed mb-4"
                   style={{ fontFamily: "'Weissenhof Grotesk', sans-serif" }}
                 >
-                  &laquo; The couple deal was perfect for date night. Great value and even better
-                  taste. Highly recommend! &raquo;
+                  &laquo; The couple deal was perfect for date night. Great
+                  value and even better taste. Highly recommend! &raquo;
                 </p>
                 <div className="flex items-center gap-2 text-[14px]">
                   <span className="text-[#C23A22]">&#9873;</span>
@@ -1512,8 +1598,8 @@ export default function PizzaLandingPage() {
                   className="text-gray-600 text-[15px] xl:text-[16px] leading-relaxed mb-5"
                   style={{ fontFamily: "'Weissenhof Grotesk', sans-serif" }}
                 >
-                  &laquo; Amazing pizza! The crust was perfectly crispy and the toppings were fresh.
-                  Best pizza delivery in town! &raquo;
+                  &laquo; Amazing pizza! The crust was perfectly crispy and the
+                  toppings were fresh. Best pizza delivery in town! &raquo;
                 </p>
                 <div className="flex items-center gap-2 text-[14px]">
                   <span className="text-[#C23A22]">&#9873;</span>
@@ -1543,8 +1629,8 @@ export default function PizzaLandingPage() {
                   className="text-gray-600 text-[15px] xl:text-[16px] leading-relaxed mb-5"
                   style={{ fontFamily: "'Weissenhof Grotesk', sans-serif" }}
                 >
-                  &laquo; Fast delivery and the food arrived hot. The student deal is unbeatable!
-                  Will definitely order again. &raquo;
+                  &laquo; Fast delivery and the food arrived hot. The student
+                  deal is unbeatable! Will definitely order again. &raquo;
                 </p>
                 <div className="flex items-center gap-2 text-[14px]">
                   <span className="text-[#C23A22]">&#9873;</span>
@@ -1574,8 +1660,9 @@ export default function PizzaLandingPage() {
                   className="text-gray-600 text-[15px] xl:text-[16px] leading-relaxed mb-5"
                   style={{ fontFamily: "'Weissenhof Grotesk', sans-serif" }}
                 >
-                  &laquo; Love the variety! From traditional to gourmet, every pizza I&apos;ve tried has
-                  been delicious. Great service too! &raquo;
+                  &laquo; Love the variety! From traditional to gourmet, every
+                  pizza I&apos;ve tried has been delicious. Great service too!
+                  &raquo;
                 </p>
                 <div className="flex items-center gap-2 text-[14px]">
                   <span className="text-[#C23A22]">&#9873;</span>
@@ -1605,8 +1692,8 @@ export default function PizzaLandingPage() {
                   className="text-white/80 text-[15px] xl:text-[16px] leading-relaxed mb-5"
                   style={{ fontFamily: "'Weissenhof Grotesk', sans-serif" }}
                 >
-                  &laquo; The couple deal was perfect for date night. Great value and even better
-                  taste. Highly recommend! &raquo;
+                  &laquo; The couple deal was perfect for date night. Great
+                  value and even better taste. Highly recommend! &raquo;
                 </p>
                 <div className="flex items-center gap-2 text-[14px]">
                   <span className="text-[#C23A22]">&#9873;</span>
@@ -1625,14 +1712,17 @@ export default function PizzaLandingPage() {
 
       {/* ========== SUBSCRIBE SECTION ========== */}
       <section className="bg-[#FAF5F0] py-20 px-6 lg:px-16">
-        <AnimatedSection animation="fadeUp" className="max-w-[800px] mx-auto text-center">
+        <AnimatedSection
+          animation="fadeUp"
+          className="max-w-[800px] mx-auto text-center"
+        >
           {/* Section Title */}
           <h2 className="text-[32px] md:text-[44px] lg:text-[56px] tracking-wide mb-4">
             <span
               className="text-[#8B4513]"
               style={{ fontFamily: "'Troyline Sans Stamp', sans-serif" }}
             >
-              SUBSCRIBE & GET{' '}
+              SUBSCRIBE & GET{" "}
             </span>
             <span
               className="text-[#C23A22] animate-pulse"
@@ -1644,7 +1734,7 @@ export default function PizzaLandingPage() {
               className="text-[#8B4513]"
               style={{ fontFamily: "'Troyline Sans Stamp', sans-serif" }}
             >
-              {' '}
+              {" "}
               DISCOUNT
             </span>
           </h2>
@@ -1693,7 +1783,7 @@ export default function PizzaLandingPage() {
             className="text-gray-500 text-[14px]"
             style={{ fontFamily: "'Weissenhof Grotesk', sans-serif" }}
           >
-            By subscribing, you accepted our{' '}
+            By subscribing, you accepted our{" "}
             <Link
               href="#"
               className="text-[#1a1a1a] underline hover:text-[#C23A22] transition-colors"
@@ -1708,7 +1798,11 @@ export default function PizzaLandingPage() {
       <footer className="relative">
         {/* Top Brush Stroke Edge */}
         <div className="bg-[#FAF5F0] relative">
-          <svg className="w-full h-20 md:h-28" viewBox="0 0 1440 100" preserveAspectRatio="none">
+          <svg
+            className="w-full h-20 md:h-28"
+            viewBox="0 0 1440 100"
+            preserveAspectRatio="none"
+          >
             <path
               d="M0,100 L0,60 C50,65 100,40 200,50 C350,65 400,30 550,45 C700,60 800,25 950,40 C1100,55 1200,30 1300,45 C1380,55 1420,40 1440,50 L1440,100 Z"
               fill="#2a2a2a"
@@ -1746,8 +1840,9 @@ export default function PizzaLandingPage() {
                     className="text-gray-400 text-[14px] leading-relaxed max-w-[300px]"
                     style={{ fontFamily: "'Weissenhof Grotesk', sans-serif" }}
                   >
-                    We combined our passion for food with fresh high-quality ingredients to create
-                    innovative, hearth-baked pizzas. Famous Pizza - best fast food delivery service.
+                    We combined our passion for food with fresh high-quality
+                    ingredients to create innovative, hearth-baked pizzas.
+                    Famous Pizza - best fast food delivery service.
                   </p>
                 </div>
 
@@ -1774,7 +1869,9 @@ export default function PizzaLandingPage() {
                       </svg>
                       <span
                         className="text-gray-400 text-[14px]"
-                        style={{ fontFamily: "'Weissenhof Grotesk', sans-serif" }}
+                        style={{
+                          fontFamily: "'Weissenhof Grotesk', sans-serif",
+                        }}
                       >
                         SHOP 1, 112 SHANNON AVENUE, GEELONG WEST - 3218
                       </span>
@@ -1793,13 +1890,17 @@ export default function PizzaLandingPage() {
                       <div className="flex flex-col gap-1">
                         <span
                           className="text-gray-400 text-[14px]"
-                          style={{ fontFamily: "'Weissenhof Grotesk', sans-serif" }}
+                          style={{
+                            fontFamily: "'Weissenhof Grotesk', sans-serif",
+                          }}
                         >
                           (03) 5270 5039
                         </span>
                         <span
                           className="text-gray-400 text-[14px]"
-                          style={{ fontFamily: "'Weissenhof Grotesk', sans-serif" }}
+                          style={{
+                            fontFamily: "'Weissenhof Grotesk', sans-serif",
+                          }}
                         >
                           0420 513 535
                         </span>
@@ -1819,7 +1920,9 @@ export default function PizzaLandingPage() {
                       </svg>
                       <span
                         className="text-gray-400 text-[14px] lowercase"
-                        style={{ fontFamily: "'Weissenhof Grotesk', sans-serif" }}
+                        style={{
+                          fontFamily: "'Weissenhof Grotesk', sans-serif",
+                        }}
                       >
                         INFO@FAMOUSPIZZAGEELONG.COM.AU
                       </span>
@@ -1845,13 +1948,17 @@ export default function PizzaLandingPage() {
                     <div className="space-y-2">
                       <p
                         className="text-gray-400 text-[14px]"
-                        style={{ fontFamily: "'Weissenhof Grotesk', sans-serif" }}
+                        style={{
+                          fontFamily: "'Weissenhof Grotesk', sans-serif",
+                        }}
                       >
                         Sun - Thu: 03:00pm - 10:00pm
                       </p>
                       <p
                         className="text-gray-400 text-[14px]"
-                        style={{ fontFamily: "'Weissenhof Grotesk', sans-serif" }}
+                        style={{
+                          fontFamily: "'Weissenhof Grotesk', sans-serif",
+                        }}
                       >
                         Fri & Sat: 03:00pm - 12:00am
                       </p>
@@ -1859,13 +1966,17 @@ export default function PizzaLandingPage() {
                     <div className="mt-4 space-y-2">
                       <p
                         className="text-[#FFB800] text-[14px] font-medium"
-                        style={{ fontFamily: "'Weissenhof Grotesk', sans-serif" }}
+                        style={{
+                          fontFamily: "'Weissenhof Grotesk', sans-serif",
+                        }}
                       >
                         ITALIAN CUISINE
                       </p>
                       <p
                         className="text-[#FFB800] text-[14px] font-medium"
-                        style={{ fontFamily: "'Weissenhof Grotesk', sans-serif" }}
+                        style={{
+                          fontFamily: "'Weissenhof Grotesk', sans-serif",
+                        }}
                       >
                         HALAL
                       </p>
@@ -1914,7 +2025,12 @@ export default function PizzaLandingPage() {
                     href="#"
                     className="text-gray-500 hover:text-white transition-all duration-300 hover:scale-125"
                   >
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
                       <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
                     </svg>
                   </a>
