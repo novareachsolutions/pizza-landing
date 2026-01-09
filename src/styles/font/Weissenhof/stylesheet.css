@@ -1,0 +1,81 @@
+@font-face {
+    font-family: 'Troyline Sans Stamp';
+    src: url('TroylineSans-Stamp.woff2') format('woff2'),
+        url('TroylineSans-Stamp.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Weissenhof Grotesk';
+    src: url('WeissenhofGrotesk-Light.woff2') format('woff2'),
+        url('WeissenhofGrotesk-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Weissenhof Grotesk';
+    src: url('WeissenhofGrotesk-Medium.woff2') format('woff2'),
+        url('WeissenhofGrotesk-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Weissenhof Grotesk Medium It';
+    src: url('WeissenhofGrotesk-MediumItalic.woff2') format('woff2'),
+        url('WeissenhofGrotesk-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Weissenhof Grotesk';
+    src: url('WeissenhofGrotesk-BoldItalic.woff2') format('woff2'),
+        url('WeissenhofGrotesk-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Weissenhof Grotesk';
+    src: url('WeissenhofGrotesk-Regular.woff2') format('woff2'),
+        url('WeissenhofGrotesk-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Weissenhof Grotesk';
+    src: url('WeissenhofGrotesk-LightItalic.woff2') format('woff2'),
+        url('WeissenhofGrotesk-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Weissenhof Grotesk';
+    src: url('WeissenhofGrotesk-Bold.woff2') format('woff2'),
+        url('WeissenhofGrotesk-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Weissenhof Grotesk';
+    src: url('WeissenhofGrotesk-RegularItalic.woff2') format('woff2'),
+        url('WeissenhofGrotesk-RegularItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
