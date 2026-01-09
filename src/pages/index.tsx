@@ -523,24 +523,22 @@ export default function PizzaLandingPage() {
               </div>
 
               {/* Top Left Cheesy Drip */}
-              <div className="absolute top-0 left-0 w-64 h-64 md:w-96 md:h-96 lg:w-[32rem] lg:h-[32rem] z-10">
-                <Image
-                  src="/pizza-images/hero-slide3-cheese-top.png"
-                  alt="Cheese Drip"
-                  fill
-                  className="object-contain object-top-left"
-                />
-              </div>
+              <Image
+                src="/pizza-images/hero-slide3-cheese-top.png"
+                alt="Cheese Drip"
+                width={512}
+                height={400}
+                className="absolute top-0 left-0 w-48 md:w-72 lg:w-[32rem] h-auto z-10"
+              />
 
               {/* Bottom Right Cheesy Drip */}
-              <div className="absolute bottom-0 right-0 w-64 h-64 md:w-96 md:h-96 lg:w-[32rem] lg:h-[32rem] z-10">
-                <Image
-                  src="/pizza-images/hero-slide3-cheese-bottom.png"
-                  alt="Cheese Drip"
-                  fill
-                  className="object-contain object-bottom-right"
-                />
-              </div>
+              <Image
+                src="/pizza-images/hero-slide3-cheese-bottom.png"
+                alt="Cheese Drip"
+                width={512}
+                height={400}
+                className="absolute bottom-0 right-0 w-48 md:w-72 lg:w-[32rem] h-auto z-10"
+              />
 
               <div className="relative w-full h-full flex flex-col lg:flex-row p-4 md:p-8 lg:p-12 z-20 justify-center">
                 {/* Left Section - Text */}
