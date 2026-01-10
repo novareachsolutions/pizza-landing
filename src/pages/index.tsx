@@ -251,7 +251,7 @@ export default function PizzaLandingPage() {
         style={{ backgroundColor: "#B42D19" }}
       >
         {/* ===== NAVBAR ===== */}
-        <nav className="absolute top-0 left-0 right-0 z-50 px-1 lg:px-16 py-5">
+        <nav className="absolute top-0 left-0 right-0 z-50 px-1 lg:px-16 lg:py-5">
           <div className="max-w-[1400px] mx-auto flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="flex items-center relative z-50">
@@ -260,7 +260,7 @@ export default function PizzaLandingPage() {
                 alt="Famous Pizza"
                 width={120}
                 height={120}
-                className="w-[120px] h-[120px]"
+                className="w-[80px] h-[80px] md:w-[120px] md:h-[120px]"
               />
             </Link>
 
