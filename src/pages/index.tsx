@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
 
 // Custom hook for scroll-based animations
 const useScrollAnimation = (threshold = 0.1) => {
@@ -206,10 +205,6 @@ const floatingStyles = `
 `;
 
 export default function PizzaLandingPage() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const totalSlides = 3;
-
   // Prevent body scroll to avoid double scrollbar
   useEffect(() => {
     const html = document.documentElement;
@@ -229,15 +224,6 @@ export default function PizzaLandingPage() {
       body.style.overflow = originalBodyOverflow;
     };
   }, []);
-
-  // Auto-play carousel
-  useEffect(() => {
-    const autoPlayInterval = setInterval(() => {
-      setCurrentSlide((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
-    }, 8000); // Change slide every 8 seconds
-
-    return () => clearInterval(autoPlayInterval);
-  }, [totalSlides]);
 
   return (
     <div className="h-screen overflow-y-auto overflow-x-hidden">
