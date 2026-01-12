@@ -690,7 +690,7 @@ export default function PizzaLandingPage() {
             className="flex flex-wrap justify-center gap-4 md:gap-6 mb-12"
           >
             {/* Traditional Pizza */}
-            <div className="flex flex-col items-center cursor-pointer group">
+            <Link href="https://famous-pizza.customer.novareachsolutions.com/menu" className="flex flex-col items-center cursor-pointer group">
               <div className="w-[120px] md:w-[140px] h-[100px] md:h-[110px] bg-white rounded-2xl shadow-sm flex items-center justify-center transition-all duration-300 group-hover:bg-[#8B1E1E] group-hover:shadow-xl group-hover:scale-110 group-hover:-translate-y-2 p-3">
                 <img
                   src="/pizza-images/gourmet.png"
@@ -704,10 +704,10 @@ export default function PizzaLandingPage() {
               >
                 TRADITIONAL PIZZA
               </span>
-            </div>
+            </Link>
 
             {/* Special Gourmet */}
-            <div className="flex flex-col items-center cursor-pointer group">
+            <Link href="https://famous-pizza.customer.novareachsolutions.com/menu" className="flex flex-col items-center cursor-pointer group">
               <div className="w-[120px] md:w-[140px] h-[100px] md:h-[110px] bg-white rounded-2xl shadow-sm flex items-center justify-center transition-all duration-300 group-hover:bg-[#8B1E1E] group-hover:shadow-xl group-hover:scale-110 group-hover:-translate-y-2 p-3">
                 <img
                   src="/pizza-images/special-gourmet.webp"
@@ -721,10 +721,10 @@ export default function PizzaLandingPage() {
               >
                 SPECIAL GOURMET
               </span>
-            </div>
+            </Link>
 
             {/* Schnitzel */}
-            <div className="flex flex-col items-center cursor-pointer group">
+            <Link href="https://famous-pizza.customer.novareachsolutions.com/menu" className="flex flex-col items-center cursor-pointer group">
               <div className="w-[120px] md:w-[140px] h-[100px] md:h-[110px] bg-white rounded-2xl shadow-sm flex items-center justify-center transition-all duration-300 group-hover:bg-[#8B1E1E] group-hover:shadow-xl group-hover:scale-110 group-hover:-translate-y-2 p-3">
                 <img
                   src="/pizza-images/schnitzel.webp"
@@ -738,10 +738,10 @@ export default function PizzaLandingPage() {
               >
                 SCHNITZEL
               </span>
-            </div>
+            </Link>
 
             {/* Gourmet */}
-            <div className="flex flex-col items-center cursor-pointer group">
+            <Link href="https://famous-pizza.customer.novareachsolutions.com/menu" className="flex flex-col items-center cursor-pointer group">
               <div className="w-[120px] md:w-[140px] h-[100px] md:h-[110px] bg-white rounded-2xl shadow-sm flex items-center justify-center transition-all duration-300 group-hover:bg-[#8B1E1E] group-hover:shadow-xl group-hover:scale-110 group-hover:-translate-y-2 p-3">
                 <img
                   src="/pizza-images/gourmet.png"
@@ -755,10 +755,10 @@ export default function PizzaLandingPage() {
               >
                 GOURMET
               </span>
-            </div>
+            </Link>
 
             {/* Pasta */}
-            <div className="flex flex-col items-center cursor-pointer group">
+            <Link href="https://famous-pizza.customer.novareachsolutions.com/menu" className="flex flex-col items-center cursor-pointer group">
               <div className="w-[120px] md:w-[140px] h-[100px] md:h-[110px] bg-white rounded-2xl shadow-sm flex items-center justify-center transition-all duration-300 group-hover:bg-[#8B1E1E] group-hover:shadow-xl group-hover:scale-110 group-hover:-translate-y-2 p-3">
                 <img
                   src="/pizza-images/pasta.webp"
@@ -772,10 +772,10 @@ export default function PizzaLandingPage() {
               >
                 PASTA
               </span>
-            </div>
+            </Link>
 
             {/* Burger */}
-            <div className="flex flex-col items-center cursor-pointer group">
+            <Link href="https://famous-pizza.customer.novareachsolutions.com/menu" className="flex flex-col items-center cursor-pointer group">
               <div className="w-[120px] md:w-[140px] h-[100px] md:h-[110px] bg-white rounded-2xl shadow-sm flex items-center justify-center transition-all duration-300 group-hover:bg-[#8B1E1E] group-hover:shadow-xl group-hover:scale-110 group-hover:-translate-y-2 p-3">
                 <img
                   src="/pizza-images/burger.png"
@@ -789,7 +789,7 @@ export default function PizzaLandingPage() {
               >
                 BURGER
               </span>
-            </div>
+            </Link>
           </AnimatedSection>
 
           {/* Image Gallery Grid */}
