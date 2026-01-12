@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Menu, X } from "lucide-react";
 
 // Custom hook for scroll-based animations
@@ -255,7 +254,7 @@ export default function PizzaLandingPage() {
           <div className="max-w-[1400px] mx-auto flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="flex items-center relative z-50">
-              <Image
+              <img
                 src="/pizza-images/hero-slide1-logo.png"
                 alt="Famous Pizza"
                 width={120}
@@ -339,11 +338,10 @@ export default function PizzaLandingPage() {
                 {/* Left Section - Text */}
                 <div className="w-full lg:w-1/2 flex items-center justify-center lg:justify-start flex-shrink-0">
                   <div className="relative w-full lg:w-[clamp(400px,35vw,700px)] h-[250px] sm:h-[300px] md:h-[28rem] lg:h-[36rem] animate-slide-in-left">
-                    <Image
+                    <img
                       src="/pizza-images/hero-slide1-text.png"
                       alt="Opening Offer - $1 per inch"
-                      fill
-                      className="object-contain"
+                      className="absolute inset-0 w-full h-full object-contain"
                     />
                   </div>
                 </div>
@@ -351,11 +349,10 @@ export default function PizzaLandingPage() {
                 {/* Right Section - Pizza Image (Mobile: bottom, Desktop: right side) */}
                 <div className="w-full lg:w-1/2 flex items-center justify-center flex-shrink-0">
                   <div className="relative w-full lg:w-[clamp(450px,40vw,800px)] h-[250px] sm:h-[300px] md:h-96 lg:h-full animate-slide-in-right">
-                    <Image
+                    <img
                       src="/pizza-images/hero-slide1-pizza.png"
                       alt="Delicious Pizza"
-                      fill
-                      className="object-contain drop-shadow-2xl"
+                      className="absolute inset-0 w-full h-full object-contain drop-shadow-2xl"
                     />
                   </div>
                 </div>
@@ -372,11 +369,10 @@ export default function PizzaLandingPage() {
                   }}
                 >
                   <div className="relative w-14 h-14 md:w-20 md:h-20 lg:w-24 lg:h-24">
-                    <Image
+                    <img
                       src="/pizza-images/hero-slide1-halal.png"
                       alt="Halal Certified"
-                      fill
-                      className="object-contain"
+                      className="absolute inset-0 w-full h-full object-contain"
                     />
                   </div>
                 </div>
@@ -387,11 +383,10 @@ export default function PizzaLandingPage() {
             <div className="min-w-full h-full relative overflow-hidden">
               {/* Background Image */}
               <div className="absolute inset-0 -z-10">
-                <Image
+                <img
                   src="/pizza-images/hero-slide2-background.png"
                   alt="Background"
-                  fill
-                  className="object-cover"
+                  className="absolute inset-0 w-full h-full object-cover"
                 />
               </div>
 
@@ -404,11 +399,10 @@ export default function PizzaLandingPage() {
                   {/* Student Deal Text - LARGER SIZE */}
                   <div className="flex-1 flex items-center justify-center lg:justify-start lg:items-center">
                     <div className="relative w-full h-96 md:h-[32rem] lg:h-[38rem] animate-slide-in-left">
-                      <Image
+                      <img
                         src="/pizza-images/hero-slide2-text.png"
                         alt="Student Deal"
-                        fill
-                        className="object-contain object-center lg:object-left"
+                        className="absolute inset-0 w-full h-full object-contain object-center lg:object-left"
                       />
                     </div>
                   </div>
@@ -417,11 +411,10 @@ export default function PizzaLandingPage() {
                 {/* Right Section - Pizza with Coke */}
                 <div className="w-full lg:w-1/2 flex items-center justify-center relative z-20">
                   <div className="relative w-full h-80 md:h-96 lg:h-full animate-zoom-in">
-                    <Image
+                    <img
                       src="/pizza-images/hero-slide2-pizza.png"
                       alt="Pizza with Coke"
-                      fill
-                      className="object-contain drop-shadow-2xl"
+                      className="absolute inset-0 w-full h-full object-contain drop-shadow-2xl"
                     />
                   </div>
                 </div>
@@ -438,11 +431,10 @@ export default function PizzaLandingPage() {
                   }}
                 >
                   <div className="relative w-14 h-14 md:w-20 md:h-20 lg:w-24 lg:h-24">
-                    <Image
+                    <img
                       src="/pizza-images/hero-slide1-halal.png"
                       alt="Halal Certified"
-                      fill
-                      className="object-contain"
+                      className="absolute inset-0 w-full h-full object-contain"
                     />
                   </div>
                 </div>
@@ -514,31 +506,28 @@ export default function PizzaLandingPage() {
             <div className="min-w-full h-full relative overflow-hidden">
               {/* Background Image */}
               <div className="absolute inset-0 -z-10">
-                <Image
+                <img
                   src="/pizza-images/hero-slide3-background.png"
                   alt="Background"
-                  fill
-                  className="object-cover"
+                  className="absolute inset-0 w-full h-full object-cover"
                 />
               </div>
 
               {/* Top Left Cheesy Drip */}
               <div className="absolute top-0 left-0 w-64 h-64 md:w-96 md:h-96 lg:w-[32rem] lg:h-[32rem] z-10">
-                <Image
+                <img
                   src="/pizza-images/hero-slide3-cheese-top.png"
                   alt="Cheese Drip"
-                  fill
-                  className="object-contain object-top-left"
+                  className="absolute inset-0 w-full h-full object-contain object-top-left"
                 />
               </div>
 
               {/* Bottom Right Cheesy Drip */}
               <div className="absolute bottom-0 right-0 w-64 h-64 md:w-96 md:h-96 lg:w-[32rem] lg:h-[32rem] z-10">
-                <Image
+                <img
                   src="/pizza-images/hero-slide3-cheese-bottom.png"
                   alt="Cheese Drip"
-                  fill
-                  className="object-contain object-bottom-right"
+                  className="absolute inset-0 w-full h-full object-contain object-bottom-right"
                 />
               </div>
 
@@ -546,11 +535,10 @@ export default function PizzaLandingPage() {
                 {/* Left Section - Text */}
                 <div className="w-full lg:w-1/2 flex items-center justify-center lg:justify-start flex-shrink-0">
                   <div className="relative w-full max-w-lg h-[280px] sm:h-[320px] md:h-[28rem] lg:h-[32rem] animate-slide-in-left">
-                    <Image
+                    <img
                       src="/pizza-images/hero-slide3-text.png"
                       alt="Special Couple Deal"
-                      fill
-                      className="object-contain"
+                      className="absolute inset-0 w-full h-full object-contain"
                     />
                   </div>
                 </div>
@@ -558,11 +546,10 @@ export default function PizzaLandingPage() {
                 {/* Right Section - Pizza Combo */}
                 <div className="w-full lg:w-1/2 flex items-center justify-center flex-shrink-0">
                   <div className="relative w-full h-[280px] sm:h-[320px] md:h-96 lg:h-full animate-slide-in-right">
-                    <Image
+                    <img
                       src="/pizza-images/hero-slide3-combo.png"
                       alt="Pizza Combo with Garlic Bread and Pepsi"
-                      fill
-                      className="object-contain drop-shadow-2xl"
+                      className="absolute inset-0 w-full h-full object-contain drop-shadow-2xl"
                     />
                   </div>
                 </div>
@@ -580,11 +567,10 @@ export default function PizzaLandingPage() {
                 }}
               >
                 <div className="relative w-14 h-14 md:w-20 md:h-20 lg:w-24 lg:h-24">
-                  <Image
+                  <img
                     src="/pizza-images/hero-slide1-halal.png"
                     alt="Halal Certified"
-                    fill
-                    className="object-contain"
+                    className="absolute inset-0 w-full h-full object-contain"
                   />
                 </div>
               </div>
@@ -805,13 +791,10 @@ export default function PizzaLandingPage() {
                 className="w-full md:w-[66%]"
               >
                 <div className="relative overflow-hidden rounded-2xl h-[300px] md:h-[400px] transition-all duration-300 hover:shadow-2xl hover:scale-[1.01] cursor-pointer">
-                  <Image
+                  <img
                     src="/pizza-images/famous light box.jpg"
                     alt="Famous Pizza"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 66vw"
-                    priority
+                    className="absolute inset-0 w-full h-full object-cover"
                   />
                 </div>
               </AnimatedSection>
@@ -823,13 +806,10 @@ export default function PizzaLandingPage() {
                 className="w-full md:w-[34%]"
               >
                 <div className="relative overflow-hidden rounded-2xl aspect-square md:aspect-auto md:h-[400px] transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] cursor-pointer">
-                  <Image
+                  <img
                     src="/pizza-images/1.webp"
                     alt="Pizza Special 1"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 34vw"
-                    priority
+                    className="absolute inset-0 w-full h-full object-cover"
                   />
                 </div>
               </AnimatedSection>
@@ -840,34 +820,28 @@ export default function PizzaLandingPage() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                 {/* Image 2 */}
                 <div className="relative overflow-hidden rounded-2xl aspect-square transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] cursor-pointer">
-                  <Image
+                  <img
                     src="/pizza-images/2.webp"
                     alt="Pizza Special 2"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="absolute inset-0 w-full h-full object-cover"
                   />
                 </div>
 
                 {/* Image 3 */}
                 <div className="relative overflow-hidden rounded-2xl aspect-square transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] cursor-pointer">
-                  <Image
+                  <img
                     src="/pizza-images/3.webp"
                     alt="Pizza Special 3"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="absolute inset-0 w-full h-full object-cover"
                   />
                 </div>
 
                 {/* Image 4 */}
                 <div className="relative overflow-hidden rounded-2xl aspect-square transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] cursor-pointer">
-                  <Image
+                  <img
                     src="/pizza-images/4.webp"
                     alt="Pizza Special 4"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="absolute inset-0 w-full h-full object-cover"
                   />
                 </div>
               </div>
@@ -1828,7 +1802,7 @@ export default function PizzaLandingPage() {
                 <div className="group">
                   {/* Logo */}
                   <div className="flex items-center gap-3 mb-6">
-                    <Image
+                    <img
                       src="/pizza-images/hero-slide1-logo.png"
                       alt="Famous Pizza"
                       width={80}
