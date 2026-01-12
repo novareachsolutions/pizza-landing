@@ -418,7 +418,7 @@ export default function PizzaLandingPage() {
                 <div className="w-full lg:w-1/2 flex items-center justify-center relative z-20">
                   <div className="relative w-full h-80 md:h-96 lg:h-full animate-zoom-in">
                     <Image
-                      src="/pizza-images/hero-slide2-pizza.webp"
+                      src="/pizza-images/hero-slide2-pizza.png"
                       alt="Pizza with Coke"
                       fill
                       className="object-contain drop-shadow-2xl"
@@ -557,7 +557,7 @@ export default function PizzaLandingPage() {
                 <div className="w-full lg:w-1/2 flex items-center justify-center flex-shrink-0">
                   <div className="relative w-full h-[280px] sm:h-[320px] md:h-96 lg:h-full animate-slide-in-right">
                     <Image
-                      src="/pizza-images/hero-slide3-combo.webp"
+                      src="/pizza-images/hero-slide3-combo.png"
                       alt="Pizza Combo with Garlic Bread and Pepsi"
                       fill
                       className="object-contain drop-shadow-2xl"
