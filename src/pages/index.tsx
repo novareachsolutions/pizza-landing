@@ -340,7 +340,7 @@ export default function PizzaLandingPage() {
                 <div className="w-full lg:w-1/2 flex items-center justify-center lg:justify-start flex-shrink-0">
                   <div className="relative w-full lg:w-[clamp(400px,35vw,700px)] h-[250px] sm:h-[300px] md:h-[28rem] lg:h-[36rem] animate-slide-in-left">
                     <Image
-                      src="/pizza-images/hero-slide1-text.png"
+                      src="/pizza-images/hero-slide1-text.webp"
                       alt="Opening Offer - $1 per inch"
                       fill
                       className="object-contain"
@@ -418,7 +418,7 @@ export default function PizzaLandingPage() {
                 <div className="w-full lg:w-1/2 flex items-center justify-center relative z-20">
                   <div className="relative w-full h-80 md:h-96 lg:h-full animate-zoom-in">
                     <Image
-                      src="/pizza-images/hero-slide2-pizza.png"
+                      src="/pizza-images/hero-slide2-pizza.webp"
                       alt="Pizza with Coke"
                       fill
                       className="object-contain drop-shadow-2xl"
@@ -557,7 +557,7 @@ export default function PizzaLandingPage() {
                 <div className="w-full lg:w-1/2 flex items-center justify-center flex-shrink-0">
                   <div className="relative w-full h-[280px] sm:h-[320px] md:h-96 lg:h-full animate-slide-in-right">
                     <Image
-                      src="/pizza-images/hero-slide3-combo.png"
+                      src="/pizza-images/hero-slide3-combo.webp"
                       alt="Pizza Combo with Garlic Bread and Pepsi"
                       fill
                       className="object-contain drop-shadow-2xl"
@@ -710,7 +710,7 @@ export default function PizzaLandingPage() {
             <div className="flex flex-col items-center cursor-pointer group">
               <div className="w-[120px] md:w-[140px] h-[100px] md:h-[110px] bg-white rounded-2xl shadow-sm flex items-center justify-center transition-all duration-300 group-hover:bg-[#8B1E1E] group-hover:shadow-xl group-hover:scale-110 group-hover:-translate-y-2 p-3">
                 <img
-                  src="/pizza-images/special-gourmet.png"
+                  src="/pizza-images/special-gourmet.webp"
                   alt="Special Gourmet"
                   className="w-full h-full object-contain transition-all duration-300"
                 />
@@ -727,7 +727,7 @@ export default function PizzaLandingPage() {
             <div className="flex flex-col items-center cursor-pointer group">
               <div className="w-[120px] md:w-[140px] h-[100px] md:h-[110px] bg-white rounded-2xl shadow-sm flex items-center justify-center transition-all duration-300 group-hover:bg-[#8B1E1E] group-hover:shadow-xl group-hover:scale-110 group-hover:-translate-y-2 p-3">
                 <img
-                  src="/pizza-images/schnitzel.png"
+                  src="/pizza-images/schnitzel.webp"
                   alt="Schnitzel"
                   className="w-full h-full object-contain transition-all duration-300"
                 />
@@ -761,7 +761,7 @@ export default function PizzaLandingPage() {
             <div className="flex flex-col items-center cursor-pointer group">
               <div className="w-[120px] md:w-[140px] h-[100px] md:h-[110px] bg-white rounded-2xl shadow-sm flex items-center justify-center transition-all duration-300 group-hover:bg-[#8B1E1E] group-hover:shadow-xl group-hover:scale-110 group-hover:-translate-y-2 p-3">
                 <img
-                  src="/pizza-images/pasta.png"
+                  src="/pizza-images/pasta.webp"
                   alt="Pasta"
                   className="w-full h-full object-contain transition-all duration-300"
                 />
@@ -945,7 +945,7 @@ export default function PizzaLandingPage() {
                 {/* Product Image */}
                 <div className="relative z-10 w-full h-64 sm:w-40 sm:h-40 md:w-48 md:h-48 mb-4 group-hover:scale-105 transition-transform duration-300">
                   <img
-                    src="/pizza-images/periperi-pizza.png"
+                    src="/pizza-images/periperi-pizza.webp"
                     alt="Peri Peri Chicken Pizza"
                     className="w-full h-full object-contain"
                   />
@@ -1042,7 +1042,7 @@ export default function PizzaLandingPage() {
 
                 <div className="relative z-10 w-full h-64 sm:w-40 sm:h-40 md:w-48 md:h-48 mb-4 group-hover:scale-105 transition-transform duration-300">
                   <img
-                    src="/pizza-images/special-65-pizza.png"
+                    src="/pizza-images/special-65-pizza.webp"
                     alt="Special Chicken 65 Pizza"
                     className="w-full h-full object-contain"
                   />
@@ -1136,7 +1136,7 @@ export default function PizzaLandingPage() {
 
                 <div className="relative z-10 w-full h-64 sm:w-40 sm:h-40 md:w-48 md:h-48 mb-4 group-hover:scale-105 transition-transform duration-300">
                   <img
-                    src="/pizza-images/tandoori-pizza.png"
+                    src="/pizza-images/tandoori-pizza.webp"
                     alt="Chicken Tandoori Pizza"
                     className="w-full h-full object-contain"
                   />
@@ -1241,7 +1241,7 @@ export default function PizzaLandingPage() {
 
                 <div className="relative z-10 w-full h-64 sm:w-40 sm:h-40 md:w-48 md:h-48 mb-4 group-hover:scale-105 transition-transform duration-300">
                   <img
-                    src="/pizza-images/veggie-deight.png"
+                    src="/pizza-images/veggie-deight.webp"
                     alt="Veggie Delight Pizza"
                     className="w-full h-full object-contain"
                   />
